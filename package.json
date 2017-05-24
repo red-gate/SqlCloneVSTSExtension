@@ -1,0 +1,16 @@
+{
+  "name": "SQLClone-VSTSTask",
+  "dependencies": {
+    "vset": "^0.4.20"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/red-gate/SQLClone-VSTSTask.git"
+  },
+  "author": "Redgate Software Ltd",
+  "bugs": {
+    "url": "https://github.com/red-gate/SQLClone-VSTSTask/issues"
+  },
+    "homepage": "https://github.com/red-gate/SQLClone-VSTSTask"
+}
