@@ -1,4 +1,4 @@
-**These instructions are for Redgate use only, and will not work outside of Redgate.**
+> :warning: These instructions are for Redgate use only, and will not work outside of Redgate!
 
 # Releasing the VSTS SQL Clone Plugin
 ## First time set up
