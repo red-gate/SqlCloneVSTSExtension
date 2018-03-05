@@ -2,7 +2,7 @@
     "manifestVersion":  1,
     "id":  "redgateSqlClone-private",
     "name":  "SQL Clone",
-    "version":  "1.0.2.0305023419",
+    "version":  "1.0.2.103050300",
     "publisher":  "redgatesoftware",
     "targets":  [
                     {

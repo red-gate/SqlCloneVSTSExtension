@@ -9,7 +9,7 @@ $tasks = "CloneTask", "DeleteTask", "ImageTask"
 $vstsName = "redgateSqlClone"
 $rootDir = "$PSScriptRoot" | Resolve-Path
 $extensionManifestFile = "$rootDir\extension-manifest.json"
-$dateNowForRevision = get-date -format "MMddhhmmss"                                                                   # Each number in the version (x.x.x.x) has a max of 2147483647 as per the VSTS rules. We can't use year as of this breaking after (20)21. Due to lack of updates, there should be little chance of a collision.
+$dateNowForRevision = $("1$(get-date -format "MMddhhmm")")                                                                   # Each number in the version (x.x.x.x) has a max of 2147483647. The revision must be greater than 1 as per the VSTS rules. We can't use year as of this breaking after (20)21. Due to lack of updates, there should be little chance of a collision.
 $requiredVersion = "0.8.1"
 
 $ErrorActionPreference = "Stop"
