@@ -1,5 +1,6 @@
 {
   "name": "SQLClone-VSTSTask",
+  "license": "https://raw.githubusercontent.com/red-gate/SqlCloneVSTSExtension/master/LICENSE",
   "dependencies": {
     "vset": "^0.4.20"
   },
@@ -12,5 +13,5 @@
   "bugs": {
     "url": "https://github.com/red-gate/SQLClone-VSTSTask/issues"
   },
-    "homepage": "https://github.com/red-gate/SQLClone-VSTSTask"
+  "homepage": "https://github.com/red-gate/SQLClone-VSTSTask"
 }

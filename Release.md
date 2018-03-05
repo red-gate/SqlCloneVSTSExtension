@@ -2,6 +2,7 @@
 
 # Releasing the VSTS SQL Clone Plugin
 ## First time set up
+
 1. You need to [create a publisher](http://aka.ms/vsmarketplace-manage) using your Microsoft account (ignore the "Not Verified" warning - you don't need to be verified to publish to Redgate).
 2. Ask CORE to add you as a contributor to the `Redgate Software` publisher.
 
@@ -12,7 +13,6 @@
 3. Right click on the SQL Clone plugin.
 4. Select Update
 5. Select the vsix file from earlier and click upload.
-
 
 ## Prepare for next development cycle
 

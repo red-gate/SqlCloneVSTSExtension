@@ -4,7 +4,9 @@ $ErrorActionPreference = 'Stop'
 
 
 Write-Debug "Entering script SQLCloneImageTask.ps1"
-Import-Module "$PSScriptRoot\Modules\RedGate.SQLClone.PowerShell.dll"
+$redgatePowershellModulePath = "$PSScriptRoot\Modules\RedGate.SqlClone.PowerShell.dll"
+Write-Output $redgatePowershellModulePath
+Import-Module $redgatePowershellModulePath
 
 $cloneServer = Get-VstsInput -Name cloneServer -Require
 $sourceType = Get-VstsInput -Name sourceType -Require

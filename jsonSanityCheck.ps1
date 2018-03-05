@@ -6,7 +6,7 @@ $manifestJson = Get-Content $manifest -Raw | ConvertFrom-Json
 $manifestVersion = $manifestJson.version
 
 $taskJson = Get-Content $task -Raw | ConvertFrom-Json
-$taskVersion = [string]($taskJson.version.Major) + "." + [string]($taskJson.version.Minor) + "." + [string]($taskJson.version.Patch)
+$taskVersion = [string]($taskJson.version.Major) + "." + [string]($taskJson.version.Minor) + "." + [string]($taskJson.version.Patch) + "." + [string]($taskJson.version.Revision)
 
 If ($manifestVersion -notmatch $taskVersion) {
     Write-Host "##teamcity[buildProblem description='The json versions do not match. The manifest version is $manifestVersion and the task version is $taskVersion.']"

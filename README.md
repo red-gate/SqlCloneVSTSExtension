@@ -10,9 +10,9 @@ There is an Endpoint which is used to provide connection details for the SQL Clo
 
 There are three tasks:
 
-Create image
-Create clone
-Delete clone
+Create image  
+Create clone  
+Delete clone  
 
 ## Structure
 - extension-manifest.json defines most of the metadata about the plugin.
