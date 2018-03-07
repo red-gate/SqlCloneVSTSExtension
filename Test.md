@@ -5,17 +5,17 @@
 
 ## Building
 1. You will need a SQL Clone Server build agents can connect to. 
-2. Start by running build.ps1. You will need to enter the version. 
+2. Start by running `build.ps1`. You will need to enter the version. To get the version: 
     1. The version must be greater than that on [the marketplace](https://marketplace.visualstudio.com/items?itemName=redgatesoftware.redgateSqlClone)
-    2. Lines crossed out as automated in build.ps1
-3. Place the SQL Clone PowerShell cmdlet dlls in the TaskModules\ClonePowerShell folder. You can get these by installing the SQL Clone PowerShell cmdlets from the Clone Server and copying the directory contents from: %programfiles(x86)%\Red Gate\SQL Clone PowerShell Client\RedGate.SqlClone.Powershell
-5. Run build.ps1 to build the VSIX package as an Administrator using PowerShell v5 or later. This will create a `\<your publisher>.redgateSqlClone-<version>.vsix` file inside the `Packages` folder.
+3. Place the SQL Clone PowerShell cmdlet dlls in the `YourRepo\TaskModules\ClonePowerShell` folder. You can get these by installing the SQL Clone PowerShell cmdlets from the Clone Server and copying the directory contents from: `%programfiles(x86)%\Red Gate\SQL Clone PowerShell Client\RedGate.SqlClone.Powershell`
+5. Run `build.ps1` to build the VSIX package as an Administrator using PowerShell v5 or later. This will create a `\<your publisher>.redgateSqlClone-<version>.vsix` file inside the `Packages` folder.
     1. The parameters include the -version and the -build
-    2. The -version is mandatory
-    3. The -build is optional, with release being the default
+    2. The `-version` is mandatory
+    3. The `-build` is optional, with release being the default. This can be shorted to `-b`
     4. Example: Powershell into the directory with the build.ps1 file as administrator. The examples below 
-       1. .\build.ps1 -v 1.0.2 -b debug
-       2. .\build.ps1 -v 1.0.3
+       1. `.\build.ps1 -v 1.0.2 -b debug`
+       2. `.\build.ps1 -v 1.0.3`
+       3. `.\build.ps1`                       #this will prompt you to enter the version
 
 ## Test on premise TFS
 1. Navigate to the Team Foundation Server Extensions page on your server (for example, http://someserver:8080/tfs/_gallery/manage).
