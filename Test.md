@@ -1,7 +1,7 @@
 # Uploading for testing
 ## First time set up
 1. You need to [create a publisher](http://aka.ms/vsmarketplace-manage) using your Microsoft acccount (ignore the "Not Verified" warning - verification is not required to upload private extensions for testing).
-2. You will need access to either TFS 2015 Update 2 or later, or a [Visual Studio Team Services account](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409).
+2. You will need access to either TFS 2015 Update 2 or later, or a [Visual Studio Team Services account](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409). IT support can help.
 
 ## Building
 1. You will need a SQL Clone Server build agents can connect to. 
@@ -15,7 +15,7 @@
     4. Example: Powershell into the directory with the build.ps1 file as administrator. The examples below 
        1. `.\build.ps1 -v 1.0.2 -b debug`
        2. `.\build.ps1 -v 1.0.3`
-       3. `.\build.ps1`                       #this will prompt you to enter the version
+       3. `.\build.ps1`                                               this will prompt you to enter the version
 
 ## Test on premise TFS
 1. Navigate to the Team Foundation Server Extensions page on your server (for example, http://someserver:8080/tfs/_gallery/manage).
