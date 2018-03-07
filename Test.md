@@ -6,16 +6,16 @@
 ## Building
 1. You will need a SQL Clone Server build agents can connect to. 
 2. Start by running build.ps1. You will need to enter the version. 
-   - the version must be greater than that on [the marketplace](https://marketplace.visualstudio.com/items?itemName=redgatesoftware.redgateSqlClone)
-   - Lines crossed out as automated in build.ps1
+    - the version must be greater than that on [the marketplace](https://marketplace.visualstudio.com/items?itemName=redgatesoftware.redgateSqlClone)
+    - Lines crossed out as automated in build.ps1
 3. Place the SQL Clone PowerShell cmdlet dlls in the TaskModules\ClonePowerShell folder. You can get these by installing the SQL Clone PowerShell cmdlets from the Clone Server and copying the directory contents from: %programfiles(x86)%\Red Gate\SQL Clone PowerShell Client\RedGate.SqlClone.Powershell
 5. Run build.ps1 to build the VSIX package as an Administrator using PowerShell v5 or later. This will create a `\<your publisher>.redgateSqlClone-<version>.vsix` file inside the `Packages` folder.
-   - The parameters include the -version and the -build
-   - The -version is mandatory
-   - The -build is optional, with release being the default
-   - Example: Powershell into the directory with the build.ps1 file as administrator. The examples below
-     - .\build.ps1 -v 1.0.2 -b debug
-     - .\build.ps1 -v 1.0.3
+    - The parameters include the -version and the -build
+    - The -version is mandatory
+    - The -build is optional, with release being the default
+    - Example: Powershell into the directory with the build.ps1 file as administrator. The examples below
+      - .\build.ps1 -v 1.0.2 -b debug
+      - .\build.ps1 -v 1.0.3
 
 ## Test on premise TFS
 1. Navigate to the Team Foundation Server Extensions page on your server (for example, http://someserver:8080/tfs/_gallery/manage).
