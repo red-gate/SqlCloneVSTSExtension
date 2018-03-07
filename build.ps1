@@ -1,4 +1,3 @@
-[CmdletBinding()]
 Param(
     [Parameter(Mandatory=$true)][System.Version]$version,                 # such as x.x.x. This is required
     [string]$build                                                        # accepts release (public) or debug (private). Default is release
