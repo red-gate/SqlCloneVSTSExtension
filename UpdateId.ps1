@@ -21,4 +21,4 @@ param(
     }
     
     #save it
-    $json | ConvertTo-Json | set-content $extensionManifestFile
+    $json | ConvertTo-Json -Depth 10 | set-content $extensionManifestFile

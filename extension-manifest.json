@@ -1,116 +1,124 @@
 {
-    "manifestVersion":  1,
-    "id":  "redgateSqlClone-private",
-    "name":  "SQL Clone",
-    "version":  "1.0.2.103050300",
-    "publisher":  "redgatesoftware",
-    "targets":  [
-                    {
-                        "id":  "Microsoft.VisualStudio.Services.Cloud"
-                    },
-                    {
-                        "id":  "Microsoft.TeamFoundation.Server",
-                        "version":  "[14.2,)"
-                    }
+    "manifestVersion": 1,
+    "id": "redgateSqlClone",
+    "name": "SQL Clone",
+    "version": "1.0.4",
+    "publisher": "redgatesoftware",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services.Cloud"
+        },
+        {
+            "id": "Microsoft.TeamFoundation.Server",
+            "version": "[14.2,)"
+        }
+    ],
+    "description": "Clone SQL Server databases in seconds and save up to 99% disk space",
+    "public": true,
+    "icons": {
+        "default": "images/ProductIcon.png"
+    },
+    "tags": [
+        "SQL",
+        "ci",
+        "database",
+        "Redgate",
+        "Red Gate",
+        "sqlci",
+        "deployment",
+        "build",
+        "test",
+        "DLM",
+        "Automation",
+        "clone",
+        "provisioning",
+        "virtualization",
+        "copy",
+        "image",
+        "tsql",
+        "t-sql",
+        "mssql",
+        "ms-sql",
+        "provision",
+        "db"
+    ],
+    "files": [
+        {   "path": "ImageTask" },
+        {   "path": "CloneTask" },
+        {   "path": "DeleteTask" },
+        {
+		    "path": "images",
+			"addressable": true
+		}
+    ],
+    "categories": [
+		"Build and release"
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "screenshots": [
+    ],
+    "links": {
+        "home":          { "uri": "http://www.red-gate.com/products/dba/sql-clone" },
+        "learn":         { "uri": "https://www.red-gate.com/products/dba/sql-clone/resources" },
+        "support":       { "uri": "https://www.red-gate.com/products/dba/sql-clone/support" },
+        "release notes": { "uri": "https://documentation.red-gate.com/display/CLONE1/SQL+Clone+version+1.0+release+notes" }
+    },
+    "branding": {
+        "color": "white",
+        "theme": "light"
+    },
+    "contributions": [
+        {
+            "id": "SQLCloneImage",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "ImageTask"
+            }
+        },
+        {
+            "id": "SQLCloneClone",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "CloneTask"
+            }
+        },
+        {
+            "id": "SQLCloneDelete",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DeleteTask"
+            }
+        },
+        {
+            "id": "sqlclone-endpoint-type",
+            "description": "SQL Clone server Endpoint type for SQL Clone tasks",
+            "type": "ms.vss-endpoint.service-endpoint-type",
+            "targets": [
+                "ms.vss-endpoint.endpoint-types"
+            ],
+            "properties": {
+                "name": "SQLCloneEndpoint",
+                "displayName": "SQL Clone Server",
+                "authenticationSchemes": [
+                     {
+                        "type": "ms.vss-endpoint.endpoint-auth-scheme-basic"
+                     }
                 ],
-    "description":  "Clone SQL Server databases in seconds and save up to 99% disk space",
-    "public":  false,
-    "icons":  {
-                  "default":  "images/ProductIcon.png"
-              },
-    "tags":  [
-                 "SQL",
-                 "ci",
-                 "database",
-                 "Redgate",
-                 "Red Gate",
-                 "sqlci",
-                 "deployment",
-                 "build",
-                 "test",
-                 "DLM",
-                 "Automation",
-                 "clone",
-                 "provisioning",
-                 "virtualization",
-                 "copy",
-                 "image",
-                 "tsql",
-                 "t-sql",
-                 "mssql",
-                 "ms-sql",
-                 "provision",
-                 "db"
-             ],
-    "files":  [
-                  {
-                      "path":  "ImageTask"
-                  },
-                  {
-                      "path":  "CloneTask"
-                  },
-                  {
-                      "path":  "DeleteTask"
-                  },
-                  {
-                      "path":  "images",
-                      "addressable":  true
-                  }
-              ],
-    "categories":  [
-                       "Build and release"
-                   ],
-    "content":  {
-                    "details":  {
-                                    "path":  "overview.md"
-                                }
-                },
-    "screenshots":  [
-
-                    ],
-    "links":  {
-                  "home":  {
-                               "uri":  "http://www.red-gate.com/products/dba/sql-clone"
-                           },
-                  "learn":  {
-                                "uri":  "https://www.red-gate.com/products/dba/sql-clone/resources"
-                            },
-                  "support":  {
-                                  "uri":  "https://www.red-gate.com/products/dba/sql-clone/support"
-                              },
-                  "release notes":  {
-                                        "uri":  "https://documentation.red-gate.com/display/CLONE1/SQL+Clone+version+1.0+release+notes"
-                                    }
-              },
-    "branding":  {
-                     "color":  "white",
-                     "theme":  "light"
-                 },
-    "contributions":  [
-                          {
-                              "id":  "SQLCloneImage",
-                              "type":  "ms.vss-distributed-task.task",
-                              "targets":  "ms.vss-distributed-task.tasks",
-                              "properties":  "@{name=ImageTask}"
-                          },
-                          {
-                              "id":  "SQLCloneClone",
-                              "type":  "ms.vss-distributed-task.task",
-                              "targets":  "ms.vss-distributed-task.tasks",
-                              "properties":  "@{name=CloneTask}"
-                          },
-                          {
-                              "id":  "SQLCloneDelete",
-                              "type":  "ms.vss-distributed-task.task",
-                              "targets":  "ms.vss-distributed-task.tasks",
-                              "properties":  "@{name=DeleteTask}"
-                          },
-                          {
-                              "id":  "sqlclone-endpoint-type",
-                              "description":  "SQL Clone server Endpoint type for SQL Clone tasks",
-                              "type":  "ms.vss-endpoint.service-endpoint-type",
-                              "targets":  "ms.vss-endpoint.endpoint-types",
-                              "properties":  "@{name=SQLCloneEndpoint; displayName=SQL Clone Server; authenticationSchemes=System.Object[]; helpMarkDown=The SQL Clone Server URL must be accessible from any agents that are running builds or releases.}"
-                          }
-                      ]
+                "helpMarkDown": "The SQL Clone Server URL must be accessible from any agents that are running builds or releases."
+            }
+        }
+    ]
 }

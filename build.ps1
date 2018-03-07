@@ -47,6 +47,12 @@ if ([string]::IsNullOrEmpty($build)) {
 .\UpdateAllTaskVersions.ps1 -extensionManifestFile $extensionManifestFile -major $version.Major -minor $version.Minor -build $version.Build -dateNowForRevision $dateNowForRevision -rootDir $rootDir -tasks $tasks -buildType $build
 
 
+Foreach ($task in $tasks) {
+    Write-Output("Checking $task")
+    .\jsonSanityCheck.ps1 -manifest "extension-manifest.json" -task "$($task)\task.json"
+}
+
+
 Write-Output("Installing npm stuff! ")
 
 & npm install
@@ -54,6 +60,7 @@ Write-Output("Installing npm stuff! ")
 Install-PackageProvider NuGet -Force
 Import-PackageProvider NuGet -Force
 Save-Module -Name VstsTaskSdk -Path .\TaskModules -RequiredVersion $requiredVersion -Force
+
 
 
 

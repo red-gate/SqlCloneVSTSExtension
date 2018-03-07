@@ -18,7 +18,7 @@ param(
       Write-Output "Adding revision as it's debug to $fullRev"
       $json.version = $fullRev
   }
-  $json | ConvertTo-Json | set-content $extensionManifestFile
+  $json | ConvertTo-Json -Depth 10 | set-content $extensionManifestFile
 
   #now update all sub task json files
   
@@ -41,5 +41,5 @@ param(
           $json.version | Add-Member -Name "Revision" -Value ''  -MemberType NoteProperty -force                          # Can't work out how to remove the json, but forcing an empty string gives desired effect
       }
 
-      $json | ConvertTo-Json | set-content $taskPath  
+      $json | ConvertTo-Json -Depth 10 | set-content $taskPath  
   }    
