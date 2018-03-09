@@ -1,4 +1,3 @@
-[CmdletBinding()]
 param(
   [Parameter(Mandatory=$true)][string] $extensionManifestFile,
   [Parameter(Mandatory=$true)][string] $vstsName,
