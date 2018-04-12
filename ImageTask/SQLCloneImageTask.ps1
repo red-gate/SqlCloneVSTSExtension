@@ -31,8 +31,7 @@ if ($connectedServiceDetails.Auth.Parameters.Username)
 
 Connect-SqlClone -ServerUrl $connectedServiceDetails.Url -Credential $credential
 Write-Output "Connected to SQL Clone server"
-
-    
+Write-Output "Starting process"
     if ($sourceType -eq 'database')
     {
         Write-Output "Source type = database"
@@ -83,9 +82,17 @@ Write-Output "Connected to SQL Clone server"
             write-error $message
             exit 1
         }
-        Write-Output "Creating image"
-        $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -DatabaseName $sourceDatabase -Destination $cloneImageLocation | Wait-SqlCloneOperation    
-        Write-Output "Finished creating image"
+        try 
+        {
+            Write-Output "Creating image"
+            $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -DatabaseName $sourceDatabase -Destination $cloneImageLocation | Wait-SqlCloneOperation    
+            Write-Output "Finished creating image"    
+        }
+        catch 
+        {
+            $message = "Failed to create image"    
+            exit 1
+        }
     }
     else
     {

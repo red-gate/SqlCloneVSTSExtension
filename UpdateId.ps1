@@ -8,6 +8,7 @@ param(
 
     #give it default name
     
+    Write-Output("The buildTYpe is $buildType")
     
     #if debug, change the name
     if ($buildType -eq "debug") {
