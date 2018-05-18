@@ -10,9 +10,9 @@
     ],
     "author": "Redgate Software",
     "version": {
-        "Major": 1,
-        "Minor": 0,
-        "Patch": 4
+        "Major": 2,
+        "Minor": 6,
+        "Patch": 0
     },
     "demands": [
 
