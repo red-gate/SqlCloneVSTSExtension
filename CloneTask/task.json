@@ -3,16 +3,16 @@
     "name": "RedgateSqlCloneClone",
     "friendlyName": "SQL Clone - Create clone",
     "description": "Create clones with SQL Clone",
-    "helpMarkDown": "[More Information](https://documentation.red-gate.com/display/CLONE1/SQL+Clone+Documentation)",
+    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone2)",
     "category": "Build",
     "visibility": [
         "Build", "Release"
     ],
     "author": "Redgate Software",
     "version": {
-        "Major": 1,
-        "Minor": 0,
-        "Patch": 4
+        "Major": 2,
+        "Minor": 6,
+        "Patch": 0
     },
     "demands": [
 

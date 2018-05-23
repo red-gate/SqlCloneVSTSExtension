@@ -3,16 +3,16 @@
     "name": "RedgateSqlCloneImage",
     "friendlyName": "SQL Clone - Create image",
     "description": "Create images with SQL Clone",
-    "helpMarkDown": "[More Information](https://documentation.red-gate.com/display/CLONE1/SQL+Clone+Documentation)",
+    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone2)",
     "category": "Build",
     "visibility": [
         "Build", "Release"
     ],
     "author": "Redgate Software",
     "version": {
-        "Major": 1,
-        "Minor": 0,
-        "Patch": 4
+        "Major": 2,
+        "Minor": 6,
+        "Patch": 0
     },
     "demands": [
 
@@ -28,6 +28,14 @@
             "helpMarkDown": "Select the SQL Clone Server Endpoint."
         },
         {
+            "name": "sourceInstance",
+            "type": "string",
+            "label": "Source instance",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "SQL Server to create the image from. This SQL Server instance must have already been added to the SQL Clone Server specified above."
+        },
+        {
             "name": "sourceType",
             "type": "pickList",
             "label": "Source for image",
@@ -40,15 +48,6 @@
             "helpMarkDown": "Specify whether to create an image from a live SQL Server database or a SQL Server database backup."
         },
         {
-            "name": "sourceInstance",
-            "type": "string",
-            "label": "Source instance",
-            "defaultValue": "",
-            "required": true,
-            "helpMarkDown": "SQL Server to create the image from. This SQL Server instance must have already been added to the SQL Clone Server specified above.",
-            "visibleRule": "sourceType = database"
-        },
-        {
             "name": "sourceDatabase",
             "type": "string",
             "label": "Source database",
@@ -58,21 +57,12 @@
             "visibleRule": "sourceType = database"
         },
         {
-            "name": "sourceFileDirectory",
-            "type": "string",
-            "label": "Source backup file directory",
-            "defaultValue": "",
-            "required": true,
-            "helpMarkDown": "Source location of backup file. This location must have already been added to the SQL Clone Server specified above.",
-            "visibleRule": "sourceType = backup"
-        },
-        {
             "name": "sourceFileNames",
             "type": "string",
-            "label": "Source backup file name(s)",
+            "label": "Full path to backup file(s)",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Backup file name(s), seperate multiple file with ;",
+            "helpMarkDown": "For striped and/or differential backup, seperate multiple file path with ;",
             "visibleRule": "sourceType = backup"
         },
         {
