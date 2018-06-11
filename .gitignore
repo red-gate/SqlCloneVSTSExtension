@@ -221,4 +221,6 @@ ImageTask/Modules/
 ImageTask/ps_modules/
 DeleteTask/Modules/
 DeleteTask/ps_modules/
+DeleteImageTask/Modules/
+DeleteImageTask/ps_modules/
 TaskModules/
