@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "redgateSqlClone",
     "name": "SQL Clone",
-    "version": "2.6.0",
+    "version": "2.6.1",
     "publisher": "redgatesoftware",
     "targets": [
         {
