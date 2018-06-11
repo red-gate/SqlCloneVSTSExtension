@@ -15,6 +15,7 @@ $sourceInstance = Get-VstsInput -Name sourceInstance
 $sourceDatabase = Get-VstsInput -Name sourceDatabase
 $sourceFileNames = Get-VstsInput -Name sourceFileNames
 $sourceFilePassword = Get-VstsInput -Name sourceFilePassword
+$modificationScriptFiles = Get-VstsInput -Name modificationScriptFiles
 
 
 $connectedServiceDetails = Get-VstsEndpoint -Name "$cloneServer" -Require
@@ -77,12 +78,29 @@ Write-Output "Connected to SQL Clone server"
         write-error $message
         exit 1
     }
+
+    
+    $modificationFiles = $modificationScriptFiles.Split(';', [System.StringSplitOptions]::RemoveEmptyEntries)
+    $modificationScripts = @()
+    
+    Foreach ($modificationScriptFile in $modificationFiles)
+    {
+        if ($modificationScriptFile -Like "*.sql")
+        {
+            $modificationScripts += New-SqlCloneSqlScript -Path $modificationScriptFile
+        }
+
+        if ($modificationScriptFile -Like "*.dmsmaskset")
+        {
+            $modificationScripts += New-SqlCloneMask -Path $modificationScriptFile
+        }
+    }
     
     if ($sourceType -eq 'database')
     {
         Write-Output "Source type = database"
         Write-Output "Creating image"
-        $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -DatabaseName $sourceDatabase -Destination $cloneImageLocation | Wait-SqlCloneOperation    
+        $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -DatabaseName $sourceDatabase -Destination $cloneImageLocation -Modifications $modificationScripts | Wait-SqlCloneOperation    
         Write-Output "Finished creating image"
     }
     else
@@ -92,15 +110,15 @@ Write-Output "Connected to SQL Clone server"
         Write-Output "Creating image from backup"
         if($sourceFilePassword)
         {
-            $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -BackupFileName $backupFiles -BackupPassword $sourceFilePassword -Destination $cloneImageLocation | Wait-SqlCloneOperation
+            $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -BackupFileName $backupFiles -BackupPassword $sourceFilePassword -Destination $cloneImageLocation -Modifications $modificationScripts | Wait-SqlCloneOperation
         }
         else
         {
-            $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -BackupFileName $backupFiles -Destination $cloneImageLocation | Wait-SqlCloneOperation
+            $NewImage = New-SqlCloneImage -Name $imageName -SqlServerInstance $instance -BackupFileName $backupFiles -Destination $cloneImageLocation -Modifications $modificationScripts | Wait-SqlCloneOperation
         }
         Write-Output "Finished creating image from backup"        
     }
 
-  
+    
 
 Write-Debug "Leaving script SQLCloneImageTask.ps1"

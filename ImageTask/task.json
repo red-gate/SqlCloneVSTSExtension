@@ -84,6 +84,14 @@
             "helpMarkDown": "The SQL Clone image location to create the image on. This location must have already been added to the SQL Clone Server specified above."
         },
         {
+            "name": "modificationScriptFiles",
+            "type": "string",
+            "label": "Modification script(s)",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "SQL scripts and Data Masker masking set file (Datamasker must be installed on the clone agent machine), seperate multiple file path with ;"
+        },
+        {
             "name": "imageName",
             "type": "string",
             "label": "Image name",
