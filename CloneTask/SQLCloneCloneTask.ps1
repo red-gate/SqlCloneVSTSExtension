@@ -7,6 +7,7 @@ Write-Debug "Entering script SQLCloneCloneTask.ps1"
 Import-Module "$PSScriptRoot\Modules\RedGate.SQLClone.PowerShell.dll"
 $cloneServer = Get-VstsInput -Name cloneServer -Require
 $imageNameForClone = Get-VstsInput -Name imageNameForClone -Require
+$templateName = Get-VstsInput -Name templateName
 $cloneSqlServer = Get-VstsInput -Name cloneSqlServer -Require
 $cloneName = Get-VstsInput -Name cloneName -Require
 $deleteClone = Get-VstsInput -Name deleteClone
@@ -85,8 +86,16 @@ Write-Output "Connected to SQL Clone server"
                 # Clone didn't exist so nothing to do
             }
         }
-        Write-Output "Creating clone"
-        $image | New-SqlClone -Name $cloneName -Location $instance | Wait-SqlCloneOperation
+        if($templateName)
+        {
+            Write-Output "Creating clone with template:" + $templateName
+            $image | New-SqlClone -Name $cloneName -Location $instance -Template $templateName | Wait-SqlCloneOperation
+        }
+        else
+        {            
+            Write-Output "Creating clone"
+            $image | New-SqlClone -Name $cloneName -Location $instance | Wait-SqlCloneOperation            
+        }
         Write-Output "Finished creating clone"        
 
 Write-Debug "Leaving script SQLCloneCloneTask.ps1"
