@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "redgateSqlClone",
     "name": "SQL Clone",
-    "version": "2.6.0",
+    "version": "2.6.1",
     "publisher": "redgatesoftware",
     "targets": [
         {
@@ -46,6 +46,7 @@
         {   "path": "ImageTask" },
         {   "path": "CloneTask" },
         {   "path": "DeleteTask" },
+        {   "path": "DeleteImageTask" },
         {
 		    "path": "images",
 			"addressable": true
@@ -100,6 +101,16 @@
             ],
             "properties": {
                 "name": "DeleteTask"
+            }
+        },
+        {
+            "id": "SQLCloneDeleteImageTask",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "DeleteImageTask"
             }
         },
         {

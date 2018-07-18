@@ -1,8 +1,8 @@
 ﻿{
-    "id": "312f9a42-d1c9-4b76-a70b-304f6391b3f4",
-    "name": "RedgateSqlCloneDelete",
-    "friendlyName": "SQL Clone - Delete clone",
-    "description": "Delete clones created by SQL Clone",
+    "id": "124dd6eb-933e-4ce2-91ca-03611ec2bb34",
+    "name": "RedgateSqlCloneDeleteImage",
+    "friendlyName": "SQL Clone - Delete image",
+    "description": "Delete images created by SQL Clone",
     "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone2)",
     "category": "Build",
     "visibility": [
@@ -28,26 +28,18 @@
             "helpMarkDown": "Select the SQL Clone Server Endpoint."
         },
         {
-            "name": "cloneSqlServer",
+            "name": "imageName",
             "type": "string",
-            "label": "SQL Server instance",
+            "label": "Image name",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "The SQL Server instance the clone exists on. This SQL Server instance must have already been added to the SQL Clone Server specified above."
-        },
-        {
-            "name": "cloneName",
-            "type": "string",
-            "label": "Clone name",
-            "defaultValue": "",
-            "required": true,
-            "helpMarkDown": "The name of the clone to delete. Build and Release variables can be used here."
+            "helpMarkDown": "The name of the image to delete. Build and Release variables can be used here."
         }   
     ],
-    "instanceNameFormat": "Delete clone $(cloneName)",
+    "instanceNameFormat": "Delete image $(imageName)",
     "execution": {
         "PowerShell3": {
-            "target": "$(currentDirectory)\\SQLCloneDeleteTask.ps1",
+            "target": "$(currentDirectory)\\SQLCloneDeleteImageTask.ps1",
             "argumentFormat": "",
             "workingDirectory": "$(currentDirectory)"
         }

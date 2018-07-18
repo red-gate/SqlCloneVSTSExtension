@@ -6,6 +6,7 @@ Installing this extension provides three tasks:
 * **Create image** – An image is a full sized copy of a database at a point in time and can be created from a live database or backup file.
 * **Create clone** – Clones reference the data stored in the image so can be created in seconds using MBs of disk space.  
 * **Delete clone** – Remove any clones that are no longer in use.
+* **Delete image** – Remove any image that are no longer in use.
 
 ![task-screenshot](images/CloneTasks.png)
 
@@ -49,6 +50,12 @@ Specify the image the clone will be created from, as well as the target SQL Serv
 Remove clones created specifically for this build process.
 
 ![delete-clone-screenshot](images/DeleteCloneTask.png)
+
+### Delete image
+
+Remove image created specifically for this build process.
+
+![delete-image-screenshot](images/DeleteImageTask.png)
 
 
 ## Tools and Pricing
