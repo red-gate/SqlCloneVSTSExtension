@@ -11,8 +11,8 @@
     "author": "Redgate Software",
     "version": {
         "Major": 2,
-        "Minor": 6,
-        "Patch": 1
+        "Minor": 7,
+        "Patch": 2
     },
     "demands": [
 
@@ -34,6 +34,14 @@
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "The image the clone should be created from. Build and Release variables can be used here."
+        },
+        {
+            "name": "templateName",
+            "type": "string",
+            "label": "Template name",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "You can select a template to modify this clone."
         },
         {
             "name": "cloneSqlServer",
