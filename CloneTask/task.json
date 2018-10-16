@@ -3,7 +3,7 @@
     "name": "RedgateSqlCloneClone",
     "friendlyName": "SQL Clone - Create clone",
     "description": "Create clones with SQL Clone",
-    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone2)",
+    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone3)",
     "category": "Build",
     "visibility": [
         "Build", "Release"
