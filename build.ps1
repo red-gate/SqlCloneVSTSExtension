@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
-trap
-{
+trap {
+    Write-Error $PSItem.ToString()
     exit 1
 }
 .\jsonSanityCheck.ps1 -manifest "extension-manifest.json" -task "ImageTask\task.json"
