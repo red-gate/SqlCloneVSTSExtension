@@ -1,4 +1,4 @@
-﻿{
+{
     "id": "808a505f-580f-413b-a3df-43a6a4fc74ce",
     "name": "RedgateSqlCloneClone",
     "friendlyName": "SQL Clone - Create clone",
@@ -10,7 +10,7 @@
     ],
     "author": "Redgate Software",
     "version": {
-        "Major": 3,
+        "Major": 4,
         "Minor": 0,
         "Patch": 0
     },
