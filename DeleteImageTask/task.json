@@ -1,4 +1,4 @@
-﻿{
+{
     "id": "124dd6eb-933e-4ce2-91ca-03611ec2bb34",
     "name": "RedgateSqlCloneDeleteImage",
     "friendlyName": "SQL Clone - Delete image",
@@ -10,7 +10,7 @@
     ],
     "author": "Redgate Software",
     "version": {
-        "Major": 3,
+        "Major": 4,
         "Minor": 0,
         "Patch": 0
     },

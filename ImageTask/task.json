@@ -6,17 +6,16 @@
     "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone3)",
     "category": "Build",
     "visibility": [
-        "Build", "Release"
+        "Build",
+        "Release"
     ],
     "author": "Redgate Software",
     "version": {
-        "Major": 3,
+        "Major": 4,
         "Minor": 0,
         "Patch": 0
     },
-    "demands": [
-
-    ],
+    "demands": [],
     "minimumAgentVersion": "1.83.0",
     "inputs": [
         {
@@ -92,13 +91,21 @@
             "helpMarkDown": "SQL scripts and Data Masker masking set file (Datamasker must be installed on the clone agent machine), seperate multiple file path with ;"
         },
         {
+            "name": "teams",
+            "type": "multiLine",
+            "label": "Team names",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Specify names of teams that can access this image. If you're not using teams, leave this empty."
+        },
+        {
             "name": "imageName",
             "type": "string",
             "label": "Image name",
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "A name for the image. Build and Release variables can be used here."
-        }            
+        }
     ],
     "instanceNameFormat": "Create image $(imageName)",
     "execution": {
