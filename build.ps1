@@ -13,7 +13,7 @@ trap {
 .\jsonSanityCheck.ps1 -manifest "extension-manifest.json" -task "DeleteImageTask\task.json"
 
 
-& npm install
+& npm install "--loglevel=error"
 
 Install-PackageProvider NuGet -Force
 Import-PackageProvider NuGet -Force
