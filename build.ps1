@@ -30,4 +30,4 @@ Save-Module -Name VstsTaskSdk -Path .\TaskModules -RequiredVersion 0.8.1 -Force
 & xcopy TaskModules\ClonePowerShell DeleteTask\modules /E /y /i
 & xcopy TaskModules\ClonePowerShell DeleteImageTask\modules /E /y /i
 
-& .\node_modules\.bin\vset.cmd package -m extension-manifest.json -o .\Packages 
+& .\node_modules\.bin\tfx.cmd extension create --manifests extension-manifest.json --output-path .\Packages 
