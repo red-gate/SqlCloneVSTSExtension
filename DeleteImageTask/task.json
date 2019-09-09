@@ -3,7 +3,7 @@
     "name": "RedgateSqlCloneDeleteImage",
     "friendlyName": "SQL Clone - Delete image",
     "description": "Delete images created by SQL Clone",
-    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone3)",
+    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone4)",
     "category": "Build",
     "visibility": [
         "Build", "Release"

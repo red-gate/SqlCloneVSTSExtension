@@ -3,7 +3,7 @@
     "name": "RedgateSqlCloneImage",
     "friendlyName": "SQL Clone - Create image",
     "description": "Create images with SQL Clone",
-    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone3)",
+    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone4)",
     "category": "Build",
     "visibility": [
         "Build",

@@ -3,7 +3,7 @@
     "name": "RedgateSqlCloneDelete",
     "friendlyName": "SQL Clone - Delete clone",
     "description": "Delete clones created by SQL Clone",
-    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone3)",
+    "helpMarkDown": "[More Information](https://documentation.red-gate.com/clone4)",
     "category": "Build",
     "visibility": [
         "Build", "Release"

@@ -66,7 +66,7 @@
         "home":          { "uri": "http://www.red-gate.com/products/dba/sql-clone" },
         "learn":         { "uri": "https://www.red-gate.com/products/dba/sql-clone/resources" },
         "support":       { "uri": "https://www.red-gate.com/products/dba/sql-clone/support" },
-        "release notes": { "uri": "https://documentation.red-gate.com/clone3/release-notes-and-other-versions" }
+        "release notes": { "uri": "https://documentation.red-gate.com/clone4/release-notes-and-other-versions" }
     },
     "branding": {
         "color": "white",
