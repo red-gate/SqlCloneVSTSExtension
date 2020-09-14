@@ -17,13 +17,13 @@ trap {
 
 Install-PackageProvider NuGet -Force
 Import-PackageProvider NuGet -Force
-Save-Module -Name VstsTaskSdk -Path .\TaskModules -RequiredVersion 0.8.1 -Force
+Save-Module -Name VstsTaskSdk -Path .\TaskModules -RequiredVersion 0.11.0 -Force
 
 
-& xcopy TaskModules\VstsTaskSdk\0.8.1 ImageTask\ps_modules\VstsTaskSdk /E /y /i
-& xcopy TaskModules\VstsTaskSdk\0.8.1 CloneTask\ps_modules\VstsTaskSdk /E /y /i
-& xcopy TaskModules\VstsTaskSdk\0.8.1 DeleteTask\ps_modules\VstsTaskSdk /E /y /i
-& xcopy TaskModules\VstsTaskSdk\0.8.1 DeleteImageTask\ps_modules\VstsTaskSdk /E /y /i
+& xcopy TaskModules\VstsTaskSdk\0.11.0 ImageTask\ps_modules\VstsTaskSdk /E /y /i
+& xcopy TaskModules\VstsTaskSdk\0.11.0 CloneTask\ps_modules\VstsTaskSdk /E /y /i
+& xcopy TaskModules\VstsTaskSdk\0.11.0 DeleteTask\ps_modules\VstsTaskSdk /E /y /i
+& xcopy TaskModules\VstsTaskSdk\0.11.0 DeleteImageTask\ps_modules\VstsTaskSdk /E /y /i
 
 & xcopy TaskModules\ClonePowerShell ImageTask\modules /E /y /i
 & xcopy TaskModules\ClonePowerShell CloneTask\modules /E /y /i
