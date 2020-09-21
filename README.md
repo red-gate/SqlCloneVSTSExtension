@@ -26,7 +26,7 @@ Delete clone
 - Modules includes the DLLs for the SQL Clone PowerShell cmdlets - This means that a user doesn't have to install the PowerShell cmdlets on their build agent to get this working.
 - ps_modules includes the VstsTaskSdk which the PowerShell for each task uses - [VSTSTASKSDK](https://github.com/Microsoft/vsts-task-lib/blob/master/powershell/Docs/README.md). You can get it using:
     Save-Module -Name VstsTaskSdk
-The plugin was built using version 0.8.1
+The plugin was built using version 0.11.0
 
 ## Development
 
